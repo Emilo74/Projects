@@ -6,7 +6,7 @@ import speech_recognition as sr
 # initialize the recognizer
 r = sr.Recognizer()
 
-time = float(input("How long you wanna listen for boo (in minutes)? "))
+time = float(input("How long would you like to listen for? (in minutes)? "))
 time = time * 60
 
 with sr.Microphone() as source:
