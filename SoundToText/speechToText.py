@@ -21,11 +21,11 @@ def convert():
         output.insert(END, text)
 
 window = Tk()
-window.title("Speech to Text Converter for my boo")
+window.title("Speech to Text Converter")
 window.configure(background="black")
 window.geometry("610x500")
 
-Label(window, text="\n Hi bae <3 hope you get through w your work :) You got this\n\n", bg="black", fg="white").grid(row=0, column=0, sticky=W)
+Label(window, text="\n This program will convert speech to text by listening on your microphone.\n\n", bg="black", fg="white").grid(row=0, column=0, sticky=W)
 Label(window, text="Enter the length of time you want to record for (in minutes): \n", bg="black", fg="white").grid(row=1, column=0, sticky=W)
 textentry = Entry(window, width=20, bg="white")
 textentry.grid(row=2, column=0, sticky=W)
