@@ -5,8 +5,7 @@ import os
 from PyQt5.QtWebEngineWidgets import QWebEnginePage
 from PyQt5.QtWidgets import QApplication
 from PyQt5.QtCore import QUrl
-import pytube  # library for downloading youtube videos
- 
+import pytube  # library for downloading youtube videos // change line 152 in parser.py to func_regex = re.compile(r"function\([^)]?\)")
  
 class Page(QWebEnginePage):
     def __init__(self, url):
@@ -42,7 +41,7 @@ def exact_link(link):
     return new_link
  
  
-url = "https://www.youtube.com/playlist?list=PLVeyumMT4z2Wg5MOe-4INiphp8rtu_zt7"
+url = "https://youtube.com/playlist?list=PLufAyPFE97jFaO4S0myGLQuH6y5qU3c8U"
 
 # Scraping and extracting the video links from the given playlist url
 page = Page(url)
@@ -66,7 +65,6 @@ for link in soup.find_all('a', id='thumbnail'):
             links.append(new_link)
         except Exception as exp:
             pass # No function necessary for invalid <a> tags.
-
  
 video = str(input("Do you want to download the video as well? (y/n)"))
 
@@ -90,7 +88,7 @@ if video == "y" or video == "Y" or video == "yes" or video == "Yes":
 else:
     for link in links:
         yt = pytube.YouTube(link)
-    
+
         # Downloaded video will be the best quality video
         stream = yt.streams.filter(only_audio=True).first()
 
