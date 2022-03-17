@@ -44,7 +44,7 @@ def exact_link(link):
     return new_link
  
  
-url = "https://www.youtube.com/playlist?list=PLVeyumMT4z2Wg5MOe-4INiphp8rtu_zt7"
+url = "https://youtube.com/playlist?list=PLufAyPFE97jHiatMrqPAu3ECMOysIeft6"
 # Scraping and extracting the video
 # links from the given playlist url
 page = Page(url)
