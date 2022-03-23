@@ -6,14 +6,17 @@ import gradient from 'gradient-string';
 import chalkAnimation from 'chalk-animation';
 import figlet from'figlet';
 import { createSpinner } from 'nanospinner';
+import {musicQuestions} from "./questions/music.js";
+import {movieQuestions} from "./questions/movies.js";
 
 let playerName;
 
 const sleep = (ms = 2000) => new Promise((r) => setTimeout(r, ms));
 
 async function welcome() {
+    console.clear();
     const rainbowTitle = chalkAnimation.rainbow(
-        "Welcome to my Trivia Game \n"
+        "\n Welcome to my Trivia Game \n"
     );
 
     await sleep();
@@ -51,9 +54,9 @@ async function handleCategory(category) {
     if (category === "Rel Lyrics") {
         await musicQuestions(category);
     }
-    // else if (category === "Popcorn and Soda"){
-    //     await movieQuestions(category);
-    // }
+    else if (category === "Popcorn and Soda"){
+        await movieQuestions(category);
+    }
     // else if (category === "Belly Full"){
     //     await foodQuestions(category);
     // }
@@ -89,8 +92,26 @@ async function handleCategory(category) {
     // }
 }
 
+export function shuffle(array) {
+    let currentIndex = array.length,  randomIndex;
+  
+    // While there remain elements to shuffle...
+    while (currentIndex != 0) {
+  
+      // Pick a remaining element...
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+  
+      // And swap it with the current element.
+      [array[currentIndex], array[randomIndex]] = [
+        array[randomIndex], array[currentIndex]];
+    }
+  
+    return array;
+}
+
 async function chooseCategory() {
-    let categories = ["Rel Lyrics", "Popcorn and Soda", "Belly Full", "U iz ah Trini", "Sport Talk", "Tech Talk", "Console Me", "Yuh Feel Yuh Brite", "Hi Style", "Couch Potato", "Bring Back d Ole Time Days", "Divine Intervention", "Kid's Play"]
+    var categories = shuffle(["Rel Lyrics", "Popcorn and Soda", "Belly Full", "U iz ah Trini", "Sport Talk", "Tech Talk", "Console Me", "Yuh Feel Yuh Brite", "Hi Style", "Couch Potato", "Bring Back d Ole Time Days", "Divine Intervention", "Kid's Play"]);
     var count = 1;
 
     while (categories.length > 8) {
@@ -100,7 +121,7 @@ async function chooseCategory() {
         const answer = await inquirer.prompt({
             name: "category",
             type: "list",
-            message: `\n (${count}/5) Please select a category: (1 of ${categories.length}) \n`,
+            message: `\n (${count}/5) Please select a category: (${categories.length} possible choices) \n`,
             choices: categories,
         });
 
@@ -114,11 +135,12 @@ async function chooseCategory() {
     return;
 }
 
-async function handleAnswer(isCorrect) {
+export async function handleAnswer(isCorrect) {
     const spinner = createSpinner('Checking answer...').start();
     await sleep();
 
     if (isCorrect) {
+        console.clear();
         spinner.success({text: `Nice work ${playerName}. That's a legit answer! \n`});
         return;
     }
@@ -126,129 +148,6 @@ async function handleAnswer(isCorrect) {
         spinner.error({text: `Sighh Game over, you lose ${playerName}! \n`})
         process.exit(1)
     }
-}
-
-async function musicQuestions(category) {
-    await mq1(category);
-    await mq2(category);
-    await mq3(category);
-    await mq4(category);
-    await mq5(category);
-    await mq6(category);
-}
-
-async function mq1(category) {
-    console.clear()
-    console.log(`\n Category: ${chalk.bgGreenBright(category)} \n`);
-
-    const answers = await inquirer.prompt({
-        name: "question1",
-        type: "list",
-        message: "Who sang the 2010 hit song, 'Baby'? \n",
-        choices: [
-            'Usher',
-            'Justin Bieber',
-            'Nick Jonas',
-            'Snoop Dogg',
-        ],
-    });
-
-    return handleAnswer(answers.question1 == 'Justin Bieber');
-}
-
-async function mq2(category) {
-    console.clear()
-    console.log(`\n Category: ${chalk.bgGreenBright(category)} \n`);
-
-    const answers = await inquirer.prompt({
-        name: "question1",
-        type: "list",
-        message: "Which singer featured on Movado's 2012 hit, 'Caribbean Girls'? \n",
-        choices: [
-            'Nikki Minaj',
-            'Popcaan',
-            'Drake',
-            'Vybz Kartel',
-        ],
-    });
-
-    return handleAnswer(answers.question1 == 'Nikki Minaj');
-}
-
-async function mq3(category) {
-    console.clear()
-    console.log(`\n Category: ${chalk.bgGreenBright(category)} \n`);
-
-    const answers = await inquirer.prompt({
-        name: "question1",
-        type: "list",
-        message: "She was once married to Marc Anthony and is currently dating Ben Affleck \n",
-        choices: [
-            'Nikki Minaj',
-            'Salma Hayek',
-            'Jennifer Lopez',
-            'Jaime King',
-        ],
-    });
-
-    return handleAnswer(answers.question1 == 'Jennifer Lopez');
-}
-
-async function mq4(category) {
-    console.clear()
-    console.log(`\n Category: ${chalk.bgGreenBright(category)} \n`);
-
-    const answers = await inquirer.prompt({
-        name: "question1",
-        type: "list",
-        message: "You know her 'All too well' for her 'Love Story' since she was '15' \n",
-        choices: [
-            'Taylor Swift',
-            'Lorde',
-            'Pink',
-            'Adele',
-        ],
-    });
-
-    return handleAnswer(answers.question1 == 'Taylor Swift');
-}
-
-async function mq5(category) {
-    console.clear()
-    console.log(`\n Category: ${chalk.bgGreenBright(category)} \n`);
-
-    const answers = await inquirer.prompt({
-        name: "question1",
-        type: "list",
-        message: "Which iconic country Western duo sang, 'Islands in the Stream'? \n",
-        choices: [
-            'Johnny Cash and Dolly Parton',
-            'Willie Nelson and Faith Hill',
-            'Kenny Rogers and Faith Hill',
-            'Kenny Rogers and Dolly Parton',
-        ],
-    });
-
-    return handleAnswer(answers.question1 == 'Kenny Rogers and Dolly Parton');
-}
-
-async function mq6(category) {
-    console.clear()
-    console.log(`\n Category: ${chalk.bgGreenBright(category)} \n`);
-
-    const answers = await inquirer.prompt({
-        name: "question1",
-        type: "list",
-        message: "From 1935-1938, this Calypso King won 4 consecutive Road March crowns, once with his often sampled song, 'Netty Netty' \n",
-        choices: [
-            'Mighty Sparrow',
-            'Lord Kitchener',
-            'Roaring Lion',
-            'Calypso Rose',
-        ],
-    });
-
-    return handleAnswer(answers.question1 == 'Roaring Lion');
 }
 
 function winner() {
