@@ -2,7 +2,7 @@ import chalk from 'chalk';
 import inquirer from 'inquirer';
 import { handleAnswer, shuffle } from '../index.js';
 
-export async function musicQuestions(category) {
+export async function movieQuestions(category) {
     await mq1(category);
     await mq2(category);
     await mq3(category);

@@ -8,6 +8,8 @@ import figlet from'figlet';
 import { createSpinner } from 'nanospinner';
 import {musicQuestions} from "./questions/music.js";
 import {movieQuestions} from "./questions/movies.js";
+import {foodQuestions} from "./questions/food.js";
+import {triniQuestions} from "./questions/trini.js";
 
 let playerName;
 
@@ -16,7 +18,7 @@ const sleep = (ms = 2000) => new Promise((r) => setTimeout(r, ms));
 async function welcome() {
     console.clear();
     const rainbowTitle = chalkAnimation.rainbow(
-        "\n Welcome to my Trivia Game \n"
+        "\n Welcome to Trini Trivia  \n"
     );
 
     await sleep();
@@ -57,12 +59,12 @@ async function handleCategory(category) {
     else if (category === "Popcorn and Soda"){
         await movieQuestions(category);
     }
-    // else if (category === "Belly Full"){
-    //     await foodQuestions(category);
-    // }
-    // else if (category === "U iz ah Trini"){
-    //     await triniQuestions(category);
-    // }
+    else if (category === "Belly Full"){
+        await foodQuestions(category);
+    }
+    else if (category === "U iz ah Trini"){
+        await triniQuestions(category);
+    }
     // else if (category === "Sport Talk"){
     //     await sportQuestions(category);
     // }
@@ -146,6 +148,7 @@ export async function handleAnswer(isCorrect) {
     }
     else {
         spinner.error({text: `Sighh Game over, you lose ${playerName}! \n`})
+        printSocials();
         process.exit(1)
     }
 }
@@ -157,6 +160,18 @@ function winner() {
     figlet(msg, (err, data) => {
         console.log(gradient.pastel.multiline(data));
     })
+
+    printSocials();
+}
+
+function printSocials() {
+    console.log("If you enjoyed the game, please follow me @ my links below \n");
+    console.log('\u2620', '\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620\n');
+    console.log(`${chalk.bgRed("Youtube:")} https://www.youtube.com/channel/UCLdUmrSopaV5wYIuuercITQ`);
+    console.log(`${chalk.bgBlue("LinkedIn:")} https://www.linkedin.com/in/emilo-gopaul-9246201aa/`);
+    console.log(`${chalk.bgBlack("Github:")} https://github.com/Emilo74`);
+    console.log(`${chalk.bgGreen("Personal Website:")} https://emilo74.github.io/`);
+    console.log('\u2620', '\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620\n');
 }
 
 
