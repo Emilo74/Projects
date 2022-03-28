@@ -10,7 +10,7 @@ import {musicQuestions} from "./questions/music.js";
 import {movieQuestions} from "./questions/movies.js";
 import {foodQuestions} from "./questions/food.js";
 import {triniQuestions} from "./questions/trini.js";
-import {sportQuestions} from "./questions/sport";
+import {sportQuestions} from "./questions/sport.js";
 
 let playerName;
 
