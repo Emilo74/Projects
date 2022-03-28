@@ -2,7 +2,7 @@ import chalk from 'chalk';
 import inquirer from 'inquirer';
 import { handleAnswer, shuffle } from '../index.js';
 
-export async function sportQuestions(category) {
+export async function techQuestions(category) {
     await mq1(category);
     await mq2(category);
     await mq3(category);
@@ -18,16 +18,16 @@ async function mq1(category) {
     const answers = await inquirer.prompt({
         name: "question1",
         type: "list",
-        message: "(1/6) Who is the current world record holder for the highest individual score in Test cricket? \n",
+        message: "(1/6) What popular dish is most famously found at Maracas beach? \n",
         choices: shuffle([
-            'Brian Lara',
-            'Sachin Tendulkar',
-            'Sir Garfield Sobers',
-            'Matthew Hayden',
+            'Bake and Shark',
+            'Pelau',
+            'Doubles',
+            'Roti',
         ]),
     });
 
-    return handleAnswer(answers.question1 == 'Brian Lara');
+    return handleAnswer(answers.question1 == 'Bake and Shark');
 }
 
 async function mq2(category) {
@@ -36,16 +36,16 @@ async function mq2(category) {
     const answers = await inquirer.prompt({
         name: "question1",
         type: "list",
-        message: "(2/6) What is the official at a tennis game called? \n",
+        message: "(2/6) What is the most commonly salted fish sold in T&T? \n",
         choices: shuffle([
-            'Umpire',
-            'Referee',
-            'Scorer',
-            'Match official',
+            'Cod',
+            'Carite',
+            'Salmon',
+            'Tilapia',
         ]),
     });
 
-    return handleAnswer(answers.question1 == 'Umpire');
+    return handleAnswer(answers.question1 == 'Cod');
 }
 
 async function mq3(category) {
@@ -54,16 +54,16 @@ async function mq3(category) {
     const answers = await inquirer.prompt({
         name: "question1",
         type: "list",
-        message: "(3/6) As written in the IFAB lawbook, what decides a drawn football game after extra-time has elapsed in a knockout game? \n",
+        message: "(3/6) What breed of duck is most commonly cooked in T&T and is highly valued for its sweet taste and tough texture? \n",
         choices: shuffle([
-            'Kicks from the penalty mark',
-            'Penalty shootout',
-            'Golden goal',
-            'Penalty kicks',
+            'Muscovy',
+            'Pekin',
+            'Black-bellied whistling-duck',
+            'Local duck',
         ]),
     });
 
-    return handleAnswer(answers.question1 == 'Kicks from the penalty mark');
+    return handleAnswer(answers.question1 == 'Muscovy');
 }
 
 async function mq4(category) {
@@ -72,16 +72,16 @@ async function mq4(category) {
     const answers = await inquirer.prompt({
         name: "question1",
         type: "list",
-        message: "(4/6) How many pins are there in a standard bowling game? \n",
+        message: "(4/6) This local choka is commonly made by combining roasted bhigan, ochroes, tomatoes and hot peppers. \n",
         choices: shuffle([
-            '10',
-            '15',
-            '8',
-            '20',
+            'Murtani',
+            'Mother-in-law',
+            'Bhigan choka',
+            'Cassareep',
         ]),
     });
 
-    return handleAnswer(answers.question1 == '10');
+    return handleAnswer(answers.question1 == 'Murtani');
 }
 
 async function mq5(category) {
@@ -90,16 +90,16 @@ async function mq5(category) {
     const answers = await inquirer.prompt({
         name: "question1",
         type: "list",
-        message: "(5/6) Which player ser the NBA single-game scoring record by tallying 100 pints? \n",
+        message: "(5/6) Which commonly consumed starch, if not properly prepared, can lead to fatal cyanide poisoning? \n",
         choices: shuffle([
-            'Wilt Chamberlain',
-            'Michael Jordan',
-            'Lebron James',
-            'Steph Curry',
+            'Cassava',
+            'Sweet potato',
+            'Potato',
+            'Eddoes',
         ]),
     });
 
-    return handleAnswer(answers.question1 == 'Wilt Chamberlain');
+    return handleAnswer(answers.question1 == 'Cassava');
 }
 
 async function mq6(category) {
@@ -108,14 +108,14 @@ async function mq6(category) {
     const answers = await inquirer.prompt({
         name: "question1",
         type: "list",
-        message: "(6/6) Which of the following is not a field event contested at the Olympics? \n",
+        message: "(6/6) What well seasoned, peppery lagoon rice dish is famously cooked at river limes across T&T? \n",
         choices: shuffle([
-            'Pole vault',
-            'Javelin',
-            'Triathlon',
-            'High jump',
+            'Gildabaat',
+            'Pelau',
+            'Pepper rice',
+            'Jambalaya',
         ]),
     });
 
-    return handleAnswer(answers.question1 == 'Triathlon');
+    return handleAnswer(answers.question1 == 'Gildabaat');
 }

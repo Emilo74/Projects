@@ -10,6 +10,7 @@ import {musicQuestions} from "./questions/music.js";
 import {movieQuestions} from "./questions/movies.js";
 import {foodQuestions} from "./questions/food.js";
 import {triniQuestions} from "./questions/trini.js";
+import {sportQuestions} from "./questions/sport";
 
 let playerName;
 
@@ -65,9 +66,9 @@ async function handleCategory(category) {
     else if (category === "U iz ah Trini"){
         await triniQuestions(category);
     }
-    // else if (category === "Sport Talk"){
-    //     await sportQuestions(category);
-    // }
+    else if (category === "Sport Talk"){
+        await sportQuestions(category);
+    }
     // else if (category === "Tech Talk"){
     //     await techQuestions(category);
     // }
