@@ -11,6 +11,7 @@ import {movieQuestions} from "./questions/movies.js";
 import {foodQuestions} from "./questions/food.js";
 import {triniQuestions} from "./questions/trini.js";
 import {sportQuestions} from "./questions/sport.js";
+import {techQuestions} from "./questions/tech.js";
 
 let playerName;
 
@@ -69,9 +70,9 @@ async function handleCategory(category) {
     else if (category === "Sport Talk"){
         await sportQuestions(category);
     }
-    // else if (category === "Tech Talk"){
-    //     await techQuestions(category);
-    // }
+    else if (category === "Tech Talk"){
+        await techQuestions(category);
+    }
     // else if (category === "Console Me"){
     //     await gameQuestions(category);
     // }

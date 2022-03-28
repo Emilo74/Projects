@@ -5,10 +5,10 @@ import { handleAnswer, shuffle } from '../index.js';
 export async function techQuestions(category) {
     await mq1(category);
     await mq2(category);
-    await mq3(category);
+    await mq6(category);
     await mq4(category);
     await mq5(category);
-    await mq6(category);
+    await mq3(category);
 }
 
 async function mq1(category) {
@@ -18,16 +18,16 @@ async function mq1(category) {
     const answers = await inquirer.prompt({
         name: "question1",
         type: "list",
-        message: "(1/6) What popular dish is most famously found at Maracas beach? \n",
+        message: "(1/6) What does the acronym LAN stand for? \n",
         choices: shuffle([
-            'Bake and Shark',
-            'Pelau',
-            'Doubles',
-            'Roti',
+            'Local Area Network',
+            'Local Access Network',
+            'Logical Access Network',
+            'Logical Area Network',
         ]),
     });
 
-    return handleAnswer(answers.question1 == 'Bake and Shark');
+    return handleAnswer(answers.question1 == 'Local Area Network');
 }
 
 async function mq2(category) {
@@ -36,16 +36,16 @@ async function mq2(category) {
     const answers = await inquirer.prompt({
         name: "question1",
         type: "list",
-        message: "(2/6) What is the most commonly salted fish sold in T&T? \n",
+        message: "(2/6) Which popular company designed the first CPU? \n",
         choices: shuffle([
-            'Cod',
-            'Carite',
-            'Salmon',
-            'Tilapia',
+            'Intel',
+            'Zhaoxin',
+            'AMD',
+            'Nvidia',
         ]),
     });
 
-    return handleAnswer(answers.question1 == 'Cod');
+    return handleAnswer(answers.question1 == 'Intel');
 }
 
 async function mq3(category) {
@@ -53,17 +53,11 @@ async function mq3(category) {
 
     const answers = await inquirer.prompt({
         name: "question1",
-        type: "list",
-        message: "(3/6) What breed of duck is most commonly cooked in T&T and is highly valued for its sweet taste and tough texture? \n",
-        choices: shuffle([
-            'Muscovy',
-            'Pekin',
-            'Black-bellied whistling-duck',
-            'Local duck',
-        ]),
+        type: "input",
+        message: "(3/6) What does the acronym BASH stand for? ",
     });
 
-    return handleAnswer(answers.question1 == 'Muscovy');
+    return handleAnswer(answers.question1.toLowerCase().includes("bourne again shell"));
 }
 
 async function mq4(category) {
@@ -72,16 +66,16 @@ async function mq4(category) {
     const answers = await inquirer.prompt({
         name: "question1",
         type: "list",
-        message: "(4/6) This local choka is commonly made by combining roasted bhigan, ochroes, tomatoes and hot peppers. \n",
+        message: "(4/6) Which 2 people co-founded Apple Inc. in 1977 \n",
         choices: shuffle([
-            'Murtani',
-            'Mother-in-law',
-            'Bhigan choka',
-            'Cassareep',
+            'Steve Jobs and Steve Wosniak',
+            'Steve Jobs and Tim Cook',
+            'Tim Cook and Steve Wosniak',
+            'Bill Gates and Tim Cook',
         ]),
     });
 
-    return handleAnswer(answers.question1 == 'Murtani');
+    return handleAnswer(answers.question1 == 'Steve Jobs and Steve Wosniak');
 }
 
 async function mq5(category) {
@@ -90,16 +84,16 @@ async function mq5(category) {
     const answers = await inquirer.prompt({
         name: "question1",
         type: "list",
-        message: "(5/6) Which commonly consumed starch, if not properly prepared, can lead to fatal cyanide poisoning? \n",
+        message: "(5/6) Who invented the C programming language? \n",
         choices: shuffle([
-            'Cassava',
-            'Sweet potato',
-            'Potato',
-            'Eddoes',
+            'Dennis Ritchie',
+            'Ken Thompson',
+            'Bjarne Stroustrup',
+            'Linus Torvalds',
         ]),
     });
 
-    return handleAnswer(answers.question1 == 'Cassava');
+    return handleAnswer(answers.question1 == 'Dennis Ritchie');
 }
 
 async function mq6(category) {
@@ -108,14 +102,14 @@ async function mq6(category) {
     const answers = await inquirer.prompt({
         name: "question1",
         type: "list",
-        message: "(6/6) What well seasoned, peppery lagoon rice dish is famously cooked at river limes across T&T? \n",
+        message: "(6/6) What is Elon Musk's youngest son's name? \n",
         choices: shuffle([
-            'Gildabaat',
-            'Pelau',
-            'Pepper rice',
-            'Jambalaya',
+            'X Æ A-Xii',
+            'Xavier Musk',
+            'Damian Musk',
+            'Elon Musk Jr.',
         ]),
     });
 
-    return handleAnswer(answers.question1 == 'Gildabaat');
+    return handleAnswer(answers.question1 == 'X Æ A-Xii');
 }
