@@ -14,8 +14,8 @@ To win, you must answer all the questions from 5 categories.
 
 # About the Author
 
-Emilo Gopaul has been an Associate Software Engineer @[Virtana TT Ltd.](https://www.virtanatech.com/) since 2020. He has graduated with a Double Major in Mathematics and Computer Science
-from the University of the West Indies and is currently pursuing a Master's Degree at Georgia Institute of Technology.
+Emilo Gopaul has been an Associate Software Engineer [@Virtana](https://www.virtanatech.com/) since 2020. He has graduated with a Double Major in Mathematics and Computer Science
+from the University of the West Indies and is currently pursuing a Master's Degree at Georgia Institute of Technology, concentrating on Machine Learning.
 
 # Social Links
 

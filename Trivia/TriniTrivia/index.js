@@ -15,6 +15,8 @@ import {techQuestions} from "./questions/tech.js";
 import {gameQuestions} from "./questions/game.js";
 import {generalQuestions} from "./questions/general.js";
 import {styleQuestions} from "./questions/style.js";
+import {seriesQuestions} from "./questions/series.js";
+import {tbQuestions} from "./questions/tb.js";
 
 let playerName;
 
@@ -85,12 +87,12 @@ async function handleCategory(category) {
     else if (category === "Hi Style"){
         await styleQuestions(category);
     }
-    // else if (category === "Couch Potato"){
-    //     await seriesQuestions(category);
-    // }
-    // else if (category === "Bring Back d Ole Time Days"){
-    //     await tbQuestions(category);
-    // }
+    else if (category === "Couch Potato"){
+        await seriesQuestions(category);
+    }
+    else if (category === "Bring Back d Ole Time Days"){
+        await tbQuestions(category);
+    }
     // else if (category === "Divine Intervention"){
     //     await religionQuestions(category);
     // }
