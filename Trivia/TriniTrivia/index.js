@@ -17,6 +17,8 @@ import {generalQuestions} from "./questions/general.js";
 import {styleQuestions} from "./questions/style.js";
 import {seriesQuestions} from "./questions/series.js";
 import {tbQuestions} from "./questions/tb.js";
+import {religionQuestions} from "./questions/religion.js";
+import {kidsQuestions} from "./questions/kids.js";
 
 let playerName;
 
@@ -93,12 +95,12 @@ async function handleCategory(category) {
     else if (category === "Bring Back d Ole Time Days"){
         await tbQuestions(category);
     }
-    // else if (category === "Divine Intervention"){
-    //     await religionQuestions(category);
-    // }
-    // else if (category === "Kid's Play"){
-    //     await kidsQuestions(category);
-    // }
+    else if (category === "Divine Intervention"){
+        await religionQuestions(category);
+    }
+    else if (category === "Kid's Play"){
+        await kidsQuestions(category);
+    }
 }
 
 export function shuffle(array) {
@@ -120,7 +122,8 @@ export function shuffle(array) {
 }
 
 async function chooseCategory() {
-    var categories = shuffle(["Rel Lyrics", "Popcorn and Soda", "Belly Full", "U iz ah Trini", "Sport Talk", "Tech Talk", "Console Me", "Yuh Feel Yuh Brite", "Hi Style", "Couch Potato", "Bring Back d Ole Time Days", "Divine Intervention", "Kid's Play"]);
+    var categories = shuffle(["Rel Lyrics", "Popcorn and Soda", "Belly Full", "U iz ah Trini", "Sport Talk", "Tech Talk", "Console Me", "Yuh Feel Yuh Brite", "Hi Style", 
+    "Couch Potato", "Bring Back d Ole Time Days", "Divine Intervention", "Kid's Play"]);
     var count = 1;
 
     while (categories.length > 8) {
