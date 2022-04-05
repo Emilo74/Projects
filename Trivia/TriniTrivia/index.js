@@ -38,6 +38,11 @@ async function welcome() {
 
     1) Use arrow keys to select a category
     2) Answer all six (6) questions from the category
+
+    ${chalk.bgGreen("Tips: ")} 
+          Categories with (T) have some Trini related questions
+          Categories with (TT) are heavily focused on Trini history/culture        
+
     
     Win 5 categories to win $1,000,000 and reveal a secret message.
 
@@ -62,16 +67,16 @@ async function askName() {
 async function handleCategory(category) {
     console.log(`\n Category: ${chalk.bgGreenBright(category)} \n`);
 
-    if (category === "Rel Lyrics") {
+    if (category === "Rel Lyrics (T)") {
         await musicQuestions(category);
     }
     else if (category === "Popcorn and Soda"){
         await movieQuestions(category);
     }
-    else if (category === "Belly Full"){
+    else if (category === "Belly Full (TT)"){
         await foodQuestions(category);
     }
-    else if (category === "U iz ah Trini"){
+    else if (category === "U iz ah Trini (TT)"){
         await triniQuestions(category);
     }
     else if (category === "Sport Talk"){
@@ -83,7 +88,7 @@ async function handleCategory(category) {
     else if (category === "Console Me"){
         await gameQuestions(category);
     }
-    else if (category === "Yuh Feel Yuh Brite"){
+    else if (category === "Yuh Feel Yuh Brite (T)"){
         await generalQuestions(category);
     }
     else if (category === "Hi Style"){
@@ -92,7 +97,7 @@ async function handleCategory(category) {
     else if (category === "Couch Potato"){
         await seriesQuestions(category);
     }
-    else if (category === "Bring Back d Ole Time Days"){
+    else if (category === "Bring Back d Ole Time Days (TT)"){
         await tbQuestions(category);
     }
     else if (category === "Divine Intervention"){
@@ -122,8 +127,8 @@ export function shuffle(array) {
 }
 
 async function chooseCategory() {
-    var categories = shuffle(["Rel Lyrics", "Popcorn and Soda", "Belly Full", "U iz ah Trini", "Sport Talk", "Tech Talk", "Console Me", "Yuh Feel Yuh Brite", "Hi Style", 
-    "Couch Potato", "Bring Back d Ole Time Days", "Divine Intervention", "Kid's Play"]);
+    var categories = shuffle(["Rel Lyrics (T)", "Popcorn and Soda", "Belly Full (TT)", "U iz ah Trini (TT)", "Sport Talk", "Tech Talk", "Console Me", "Yuh Feel Yuh Brite (T)", "Hi Style", 
+    "Couch Potato", "Bring Back d Ole Time Days (TT)", "Divine Intervention", "Kid's Play"]);
     var count = 1;
 
     while (categories.length > 8) {
@@ -173,8 +178,8 @@ function winner() {
 
     printSocials();
 
-    console.log(`${chalk.bgBlue("Comment this under my Youtube video for a chance to be featured in my next video: ")}`);
-    console.log(`${chalk.bgBlue("Javascript is super easy and fun to learn!")}`)
+    console.log("Comment this under my Youtube video for a chance to be featured in my next video: ");
+    console.log(`${chalk.bgBlue("\nJavascript is super easy and fun to learn!")}`)
 }
 
 function printSocials() {

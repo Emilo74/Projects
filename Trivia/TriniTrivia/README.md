@@ -11,7 +11,8 @@ This game consists of 13 categories, each category consists of 6 questions.
 
 To win, you must answer all the questions from 5 categories.
 
-
+Categories with (T) have some Trini related questions
+Categories with (TT) are heavily focused on Trini history/culture
 # About the Author
 
 Emilo Gopaul has been an Associate Software Engineer [@Virtana](https://www.virtanatech.com/) since 2020. He has graduated with a Double Major in Mathematics and Computer Science
