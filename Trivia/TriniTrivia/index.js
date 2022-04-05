@@ -12,6 +12,9 @@ import {foodQuestions} from "./questions/food.js";
 import {triniQuestions} from "./questions/trini.js";
 import {sportQuestions} from "./questions/sport.js";
 import {techQuestions} from "./questions/tech.js";
+import {gameQuestions} from "./questions/game.js";
+import {generalQuestions} from "./questions/general.js";
+import {styleQuestions} from "./questions/style.js";
 
 let playerName;
 
@@ -20,7 +23,7 @@ const sleep = (ms = 2000) => new Promise((r) => setTimeout(r, ms));
 async function welcome() {
     console.clear();
     const rainbowTitle = chalkAnimation.rainbow(
-        "\n Welcome to Trini Trivia  \n"
+        "\n Welcome to my Trivia Game :)  \n"
     );
 
     await sleep();
@@ -73,15 +76,15 @@ async function handleCategory(category) {
     else if (category === "Tech Talk"){
         await techQuestions(category);
     }
-    // else if (category === "Console Me"){
-    //     await gameQuestions(category);
-    // }
-    // else if (category === "Yuh Feel Yuh Brite"){
-    //     await generalQuestions(category);
-    // }
-    // else if (category === "Hi Style"){
-    //     await styleQuestions(category);
-    // }
+    else if (category === "Console Me"){
+        await gameQuestions(category);
+    }
+    else if (category === "Yuh Feel Yuh Brite"){
+        await generalQuestions(category);
+    }
+    else if (category === "Hi Style"){
+        await styleQuestions(category);
+    }
     // else if (category === "Couch Potato"){
     //     await seriesQuestions(category);
     // }
@@ -145,7 +148,7 @@ export async function handleAnswer(isCorrect) {
 
     if (isCorrect) {
         console.clear();
-        spinner.success({text: `Nice work ${playerName}. That's a legit answer! \n`});
+        spinner.success({text: `Nice work ${playerName}. That's a great answer! \n`});
         return;
     }
     else {
@@ -164,6 +167,9 @@ function winner() {
     })
 
     printSocials();
+
+    console.log(`${chalk.bgBlue("Comment this under my Youtube video for a chance to be featured in my next video: ")}`);
+    console.log(`${chalk.bgBlue("Javascript is super easy and fun to learn!")}`)
 }
 
 function printSocials() {
@@ -173,7 +179,7 @@ function printSocials() {
     console.log(`${chalk.bgBlue("LinkedIn:")} https://www.linkedin.com/in/emilo-gopaul-9246201aa/`);
     console.log(`${chalk.bgBlack("Github:")} https://github.com/Emilo74`);
     console.log(`${chalk.bgGreen("Personal Website:")} https://emilo74.github.io/`);
-    console.log('\u2620', '\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620\n');
+    console.log('\n \u2620', '\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620\n');
 }
 
 

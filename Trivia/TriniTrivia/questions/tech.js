@@ -54,7 +54,7 @@ async function mq3(category) {
     const answers = await inquirer.prompt({
         name: "question1",
         type: "input",
-        message: "(3/6) What does the acronym BASH stand for? ",
+        message: "(6/6) What does the acronym BASH stand for? ",
     });
 
     return handleAnswer(answers.question1.toLowerCase().includes("bourne again shell"));
@@ -102,7 +102,7 @@ async function mq6(category) {
     const answers = await inquirer.prompt({
         name: "question1",
         type: "list",
-        message: "(6/6) What is Elon Musk's youngest son's name? \n",
+        message: "(3/6) What is Elon Musk's youngest son's name? \n",
         choices: shuffle([
             'X Æ A-Xii',
             'Xavier Musk',
