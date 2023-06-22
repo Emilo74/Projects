@@ -12,6 +12,13 @@ import {foodQuestions} from "./questions/food.js";
 import {triniQuestions} from "./questions/trini.js";
 import {sportQuestions} from "./questions/sport.js";
 import {techQuestions} from "./questions/tech.js";
+import {gameQuestions} from "./questions/game.js";
+import {generalQuestions} from "./questions/general.js";
+import {styleQuestions} from "./questions/style.js";
+import {seriesQuestions} from "./questions/series.js";
+import {tbQuestions} from "./questions/tb.js";
+import {religionQuestions} from "./questions/religion.js";
+import {kidsQuestions} from "./questions/kids.js";
 
 let playerName;
 
@@ -20,7 +27,7 @@ const sleep = (ms = 2000) => new Promise((r) => setTimeout(r, ms));
 async function welcome() {
     console.clear();
     const rainbowTitle = chalkAnimation.rainbow(
-        "\n Welcome to Trini Trivia  \n"
+        "\n Welcome to my Trivia Game :)  \n"
     );
 
     await sleep();
@@ -31,6 +38,11 @@ async function welcome() {
 
     1) Use arrow keys to select a category
     2) Answer all six (6) questions from the category
+
+    ${chalk.bgGreen("Tips: ")} 
+          Categories with (T) have some Trini related questions
+          Categories with (TT) are heavily focused on Trini history/culture        
+
     
     Win 5 categories to win $1,000,000 and reveal a secret message.
 
@@ -55,16 +67,16 @@ async function askName() {
 async function handleCategory(category) {
     console.log(`\n Category: ${chalk.bgGreenBright(category)} \n`);
 
-    if (category === "Rel Lyrics") {
+    if (category === "Rel Lyrics (T)") {
         await musicQuestions(category);
     }
     else if (category === "Popcorn and Soda"){
         await movieQuestions(category);
     }
-    else if (category === "Belly Full"){
+    else if (category === "Belly Full (TT)"){
         await foodQuestions(category);
     }
-    else if (category === "U iz ah Trini"){
+    else if (category === "U iz ah Trini (TT)"){
         await triniQuestions(category);
     }
     else if (category === "Sport Talk"){
@@ -73,27 +85,27 @@ async function handleCategory(category) {
     else if (category === "Tech Talk"){
         await techQuestions(category);
     }
-    // else if (category === "Console Me"){
-    //     await gameQuestions(category);
-    // }
-    // else if (category === "Yuh Feel Yuh Brite"){
-    //     await generalQuestions(category);
-    // }
-    // else if (category === "Hi Style"){
-    //     await styleQuestions(category);
-    // }
-    // else if (category === "Couch Potato"){
-    //     await seriesQuestions(category);
-    // }
-    // else if (category === "Bring Back d Ole Time Days"){
-    //     await tbQuestions(category);
-    // }
-    // else if (category === "Divine Intervention"){
-    //     await religionQuestions(category);
-    // }
-    // else if (category === "Kid's Play"){
-    //     await kidsQuestions(category);
-    // }
+    else if (category === "Console Me"){
+        await gameQuestions(category);
+    }
+    else if (category === "Yuh Feel Yuh Brite (T)"){
+        await generalQuestions(category);
+    }
+    else if (category === "Hi Style"){
+        await styleQuestions(category);
+    }
+    else if (category === "Couch Potato"){
+        await seriesQuestions(category);
+    }
+    else if (category === "Bring Back d Ole Time Days (TT)"){
+        await tbQuestions(category);
+    }
+    else if (category === "Divine Intervention"){
+        await religionQuestions(category);
+    }
+    else if (category === "Kid's Play"){
+        await kidsQuestions(category);
+    }
 }
 
 export function shuffle(array) {
@@ -115,7 +127,8 @@ export function shuffle(array) {
 }
 
 async function chooseCategory() {
-    var categories = shuffle(["Rel Lyrics", "Popcorn and Soda", "Belly Full", "U iz ah Trini", "Sport Talk", "Tech Talk", "Console Me", "Yuh Feel Yuh Brite", "Hi Style", "Couch Potato", "Bring Back d Ole Time Days", "Divine Intervention", "Kid's Play"]);
+    var categories = shuffle(["Rel Lyrics (T)", "Popcorn and Soda", "Belly Full (TT)", "U iz ah Trini (TT)", "Sport Talk", "Tech Talk", "Console Me", "Yuh Feel Yuh Brite (T)", "Hi Style", 
+    "Couch Potato", "Bring Back d Ole Time Days (TT)", "Divine Intervention", "Kid's Play"]);
     var count = 1;
 
     while (categories.length > 8) {
@@ -145,7 +158,7 @@ export async function handleAnswer(isCorrect) {
 
     if (isCorrect) {
         console.clear();
-        spinner.success({text: `Nice work ${playerName}. That's a legit answer! \n`});
+        spinner.success({text: `Nice work ${playerName}. That's a great answer! \n`});
         return;
     }
     else {
@@ -164,6 +177,9 @@ function winner() {
     })
 
     printSocials();
+
+    console.log("Comment this under my Youtube video for a chance to be featured in my next video: ");
+    console.log(`${chalk.bgBlue("\nJavascript is super easy and fun to learn!")}`)
 }
 
 function printSocials() {
@@ -173,7 +189,7 @@ function printSocials() {
     console.log(`${chalk.bgBlue("LinkedIn:")} https://www.linkedin.com/in/emilo-gopaul-9246201aa/`);
     console.log(`${chalk.bgBlack("Github:")} https://github.com/Emilo74`);
     console.log(`${chalk.bgGreen("Personal Website:")} https://emilo74.github.io/`);
-    console.log('\u2620', '\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620\n');
+    console.log('\n \u2620', '\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620','\u2620\n');
 }
 
 

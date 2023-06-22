@@ -1,12 +1,12 @@
 {
-  "name": "trivia",
-  "version": "1.0.0",
+  "name": "trini-trivia",
+  "version": "1.2.0",
   "description": "General Trivia",
   "main": "index.js",
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Emilo74/Projects/tree/master/Trivia"
+    "url": "https://github.com/Emilo74/Projects/tree/master/Trivia/TriniTrivia"
   },
   "scripts": {
     "start": "node .",

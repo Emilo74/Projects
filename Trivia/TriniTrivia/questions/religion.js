@@ -2,7 +2,7 @@ import chalk from 'chalk';
 import inquirer from 'inquirer';
 import { handleAnswer, shuffle } from '../index.js';
 
-export async function gameQuestions(category) {
+export async function religionQuestions(category) {
     await mq1(category);
     await mq2(category);
     await mq3(category);
@@ -18,16 +18,16 @@ async function mq1(category) {
     const answers = await inquirer.prompt({
         name: "question1",
         type: "list",
-        message: "(1/6) Who is Mario's brother? \n",
+        message: "(1/6) Which of the following was not an apostle of Jesus Christ? \n",
         choices: shuffle([
-            'Luigi',
-            'Bowser',
-            'Waluigi',
-            'Toad',
+            'Matthew',
+            'Mark',
+            'James',
+            'Thomas',
         ]),
     });
 
-    return handleAnswer(answers.question1 == 'Luigi');
+    return handleAnswer(answers.question1 == 'Mark');
 }
 
 async function mq2(category) {
@@ -36,16 +36,16 @@ async function mq2(category) {
     const answers = await inquirer.prompt({
         name: "question1",
         type: "list",
-        message: "(2/6) In Street Fighter, which country is Blanka from? \n",
+        message: "(2/6) Who is the Hindu goddess of death? \n",
         choices: shuffle([
-            'Brazil',
-            'Japan',
-            'China',
-            'Chile',
+            'Kali',
+            'Rawan',
+            'Shiva',
+            'Ram',
         ]),
     });
 
-    return handleAnswer(answers.question1 == 'Brazil');
+    return handleAnswer(answers.question1 == 'Kali');
 }
 
 async function mq3(category) {
@@ -54,16 +54,16 @@ async function mq3(category) {
     const answers = await inquirer.prompt({
         name: "question1",
         type: "list",
-        message: "(3/6) Which video game company is publishing the Far Cry series? \n",
+        message: "(3/6) Who is the most mentioned prophet in the Quoran? \n",
         choices: shuffle([
-            'Ubisoft',
-            'Activision Blizzard',
-            'Sega',
-            'Bethesda Softworks',
+            'Jesus',
+            'Job',
+            'Ishmael',
+            'Prophet Muhhamad',
         ]),
     });
 
-    return handleAnswer(answers.question1 == 'Ubisoft');
+    return handleAnswer(answers.question1 == 'Jesus');
 }
 
 async function mq4(category) {
@@ -72,16 +72,16 @@ async function mq4(category) {
     const answers = await inquirer.prompt({
         name: "question1",
         type: "list",
-        message: "(4/6) In Minecraft, what materials are needed to make obsidian? \n",
+        message: "(4/6) Which country did Buddhism originate? \n",
         choices: shuffle([
-            'Water and Lava',
-            'Water and Clay',
-            'Coal and Clay',
-            'Coal and Lava',
+            'India',
+            'Sri Lanka',
+            'China',
+            'Bhutan',
         ]),
     });
 
-    return handleAnswer(answers.question1 == 'Water and Lava');
+    return handleAnswer(answers.question1 == 'India');
 }
 
 async function mq5(category) {
@@ -90,16 +90,16 @@ async function mq5(category) {
     const answers = await inquirer.prompt({
         name: "question1",
         type: "list",
-        message: "(5/6) What was the first hand-held console with cartridges produces by Nintendo? \n",
+        message: "(5/6) What island nation did Ram visit to rescue Sita? \n",
         choices: shuffle([
-            'Game Boy',
-            'Game and Watch',
-            'Nintendo 64',
-            'Nintendo DS',
+            'India',
+            'Sri Lanka',
+            'Nepal',
+            'Tobago',
         ]),
     });
 
-    return handleAnswer(answers.question1 == 'Game Boy');
+    return handleAnswer(answers.question1 == 'Sri Lanka');
 }
 
 async function mq6(category) {
@@ -108,8 +108,8 @@ async function mq6(category) {
     const answers = await inquirer.prompt({
         name: "question1",
         type: "input",
-        message: "(6/6) Produced by Nutting Associates, what is the first commercial arcade video game? ",
+        message: "(6/6) In Christianity, the 7 deadly sins are: lust, greed, gluttony, envy, wrath, pride and _____? ",
     });
 
-    return handleAnswer(answers.question1.toLowerCase().includes("computer space"));
+    return handleAnswer(answers.question1.toLowerCase().includes("sloth"));
 }

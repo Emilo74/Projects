@@ -2,7 +2,7 @@ import chalk from 'chalk';
 import inquirer from 'inquirer';
 import { handleAnswer, shuffle } from '../index.js';
 
-export async function gameQuestions(category) {
+export async function generalQuestions(category) {
     await mq1(category);
     await mq2(category);
     await mq3(category);
@@ -18,16 +18,16 @@ async function mq1(category) {
     const answers = await inquirer.prompt({
         name: "question1",
         type: "list",
-        message: "(1/6) Who is Mario's brother? \n",
+        message: "(1/6) How many months are in a leap year? \n",
         choices: shuffle([
-            'Luigi',
-            'Bowser',
-            'Waluigi',
-            'Toad',
+            '12',
+            '4',
+            '10',
+            '28',
         ]),
     });
 
-    return handleAnswer(answers.question1 == 'Luigi');
+    return handleAnswer(answers.question1 == '12');
 }
 
 async function mq2(category) {
@@ -36,16 +36,16 @@ async function mq2(category) {
     const answers = await inquirer.prompt({
         name: "question1",
         type: "list",
-        message: "(2/6) In Street Fighter, which country is Blanka from? \n",
+        message: "(2/6) How many bones are there in an elephant's trunk? \n",
         choices: shuffle([
-            'Brazil',
-            'Japan',
-            'China',
-            'Chile',
+            '0',
+            '1',
+            '5',
+            '10',
         ]),
     });
 
-    return handleAnswer(answers.question1 == 'Brazil');
+    return handleAnswer(answers.question1 == '0');
 }
 
 async function mq3(category) {
@@ -54,16 +54,16 @@ async function mq3(category) {
     const answers = await inquirer.prompt({
         name: "question1",
         type: "list",
-        message: "(3/6) Which video game company is publishing the Far Cry series? \n",
+        message: "(3/6) What is the collective noun given for a group of monkeys? \n",
         choices: shuffle([
-            'Ubisoft',
-            'Activision Blizzard',
-            'Sega',
-            'Bethesda Softworks',
+            'Barrel',
+            'Group',
+            'Pack',
+            'School',
         ]),
     });
 
-    return handleAnswer(answers.question1 == 'Ubisoft');
+    return handleAnswer(answers.question1 == 'Barrel');
 }
 
 async function mq4(category) {
@@ -72,16 +72,16 @@ async function mq4(category) {
     const answers = await inquirer.prompt({
         name: "question1",
         type: "list",
-        message: "(4/6) In Minecraft, what materials are needed to make obsidian? \n",
+        message: "(4/6) If I had a fear of rain, what phobia would I have? \n",
         choices: shuffle([
-            'Water and Lava',
-            'Water and Clay',
-            'Coal and Clay',
-            'Coal and Lava',
+            'Ombrophobia',
+            'Arachnophobia',
+            'Hydrophobia',
+            'Claustrophobia',
         ]),
     });
 
-    return handleAnswer(answers.question1 == 'Water and Lava');
+    return handleAnswer(answers.question1 == 'Ombrophobia');
 }
 
 async function mq5(category) {
@@ -90,16 +90,16 @@ async function mq5(category) {
     const answers = await inquirer.prompt({
         name: "question1",
         type: "list",
-        message: "(5/6) What was the first hand-held console with cartridges produces by Nintendo? \n",
+        message: "(5/6) When checking for gamble in the card game, 'All Fours', what is the maximum number of points that can be obtained? \n",
         choices: shuffle([
-            'Game Boy',
-            'Game and Watch',
-            'Nintendo 64',
-            'Nintendo DS',
+            '80',
+            '40',
+            '75',
+            '100',
         ]),
     });
 
-    return handleAnswer(answers.question1 == 'Game Boy');
+    return handleAnswer(answers.question1 == '80');
 }
 
 async function mq6(category) {
@@ -108,8 +108,8 @@ async function mq6(category) {
     const answers = await inquirer.prompt({
         name: "question1",
         type: "input",
-        message: "(6/6) Produced by Nutting Associates, what is the first commercial arcade video game? ",
+        message: "(6/6) The 2 atomic bombs that resulted in the end of WWII were dropped in Hiroshima and which other city? ",
     });
 
-    return handleAnswer(answers.question1.toLowerCase().includes("computer space"));
+    return handleAnswer(answers.question1.toLowerCase().includes("nagasaki"));
 }

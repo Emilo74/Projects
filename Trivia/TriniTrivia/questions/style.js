@@ -2,7 +2,7 @@ import chalk from 'chalk';
 import inquirer from 'inquirer';
 import { handleAnswer, shuffle } from '../index.js';
 
-export async function gameQuestions(category) {
+export async function styleQuestions(category) {
     await mq1(category);
     await mq2(category);
     await mq3(category);
@@ -18,16 +18,16 @@ async function mq1(category) {
     const answers = await inquirer.prompt({
         name: "question1",
         type: "list",
-        message: "(1/6) Who is Mario's brother? \n",
+        message: "(1/6) Which brand manufactures Air Jordans? \n",
         choices: shuffle([
-            'Luigi',
-            'Bowser',
-            'Waluigi',
-            'Toad',
+            'Nike',
+            'Puma',
+            'Adidas',
+            'Air',
         ]),
     });
 
-    return handleAnswer(answers.question1 == 'Luigi');
+    return handleAnswer(answers.question1 == 'Nike');
 }
 
 async function mq2(category) {
@@ -36,16 +36,16 @@ async function mq2(category) {
     const answers = await inquirer.prompt({
         name: "question1",
         type: "list",
-        message: "(2/6) In Street Fighter, which country is Blanka from? \n",
+        message: "(2/6) Which former supermodel hosted AGT from 2017-2018? \n",
         choices: shuffle([
-            'Brazil',
-            'Japan',
-            'China',
-            'Chile',
+            'Tyra Banks',
+            'Heidi Klum',
+            'Sofía Vergara',
+            'Mel B',
         ]),
     });
 
-    return handleAnswer(answers.question1 == 'Brazil');
+    return handleAnswer(answers.question1 == 'Tyra Banks');
 }
 
 async function mq3(category) {
@@ -54,16 +54,16 @@ async function mq3(category) {
     const answers = await inquirer.prompt({
         name: "question1",
         type: "list",
-        message: "(3/6) Which video game company is publishing the Far Cry series? \n",
+        message: "(3/6) In the 2006 Meryl Streep film, what brand did the devil wear? \n",
         choices: shuffle([
-            'Ubisoft',
-            'Activision Blizzard',
-            'Sega',
-            'Bethesda Softworks',
+            'Prada',
+            'Nike',
+            'Coach',
+            'Gucci',
         ]),
     });
 
-    return handleAnswer(answers.question1 == 'Ubisoft');
+    return handleAnswer(answers.question1 == 'Prada');
 }
 
 async function mq4(category) {
@@ -72,16 +72,16 @@ async function mq4(category) {
     const answers = await inquirer.prompt({
         name: "question1",
         type: "list",
-        message: "(4/6) In Minecraft, what materials are needed to make obsidian? \n",
+        message: "(4/6) Which Creed actor id the brand ambassador for the fragrance Coach? \n",
         choices: shuffle([
-            'Water and Lava',
-            'Water and Clay',
-            'Coal and Clay',
-            'Coal and Lava',
+            'Michael B. Jordan',
+            'Sylvester Stallone',
+            'Tessa Thompson',
+            'Mark Tremonti',
         ]),
     });
 
-    return handleAnswer(answers.question1 == 'Water and Lava');
+    return handleAnswer(answers.question1 == 'Michael B. Jordan');
 }
 
 async function mq5(category) {
@@ -90,16 +90,16 @@ async function mq5(category) {
     const answers = await inquirer.prompt({
         name: "question1",
         type: "list",
-        message: "(5/6) What was the first hand-held console with cartridges produces by Nintendo? \n",
+        message: "(5/6) Which fashion designer and TV personality was convicted and jailed for insider trading in 2006? \n",
         choices: shuffle([
-            'Game Boy',
-            'Game and Watch',
-            'Nintendo 64',
-            'Nintendo DS',
+            'Martha Stewart',
+            'Coco Chanel',
+            'Donatella Versace',
+            'Christian Dior',
         ]),
     });
 
-    return handleAnswer(answers.question1 == 'Game Boy');
+    return handleAnswer(answers.question1 == 'Martha Stewart');
 }
 
 async function mq6(category) {
@@ -108,8 +108,8 @@ async function mq6(category) {
     const answers = await inquirer.prompt({
         name: "question1",
         type: "input",
-        message: "(6/6) Produced by Nutting Associates, what is the first commercial arcade video game? ",
+        message: "(6/6) Which highly sought after wedding dress designer had made wedding gowns for popular figures such as the Kardashian sisters, Victoria Beckham and Ariana Grande? ",
     });
 
-    return handleAnswer(answers.question1.toLowerCase().includes("computer space"));
+    return handleAnswer(answers.question1.toLowerCase().includes("vera wang"));
 }
